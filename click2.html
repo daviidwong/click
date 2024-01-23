@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicks and Keystrokes Counter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #3498db, #2c3e50);
+            color: white;
+            text-align: center;
+            margin: 50px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: slideInDown 1s ease-in-out;
+        }
+
+        p {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            animation: slideInUp 1s ease-in-out;
+        }
+
+        span {
+            font-weight: bold;
+            color: #FFD700;
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #FFD700;
+            color: #2c3e50;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            animation: zoomIn 1s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #FFB300;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="animate__animated animate__slideInDown">Clicks and Keystrokes Counter</h1>
+    <p class="animate__animated animate__slideInUp">Clicks: <span id="clickCount">0</span></p>
+    <p class="animate__animated animate__slideInUp">Keystrokes: <span id="keystrokeCount">0</span></p>
+    <button class="animate__animated animate__zoomIn" onclick="calculateRandomFormula()">Calculate</button>
+
+    <script>
+        let clickCount = 0;
+        let keystrokeCount = 0;
+
+        const clickCountElement = document.getElementById('clickCount');
+        const keystrokeCountElement = document.getElementById('keystrokeCount');
+
+        document.addEventListener('click', () => {
+            clickCount++;
+            updateCounts();
+        });
+
+        document.addEventListener('keydown', () => {
+            keystrokeCount++;
+            updateCounts();
+        });
+
+        function updateCounts() {
+            clickCountElement.textContent = clickCount;
+            keystrokeCountElement.textContent = keystrokeCount;
+        }
+
+        function calculateRandomFormula() {
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicks and Keystrokes Counter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #FF416C, #FF4B2B);
+            color: white;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        span {
+            font-weight: bold;
+            color: #00BFFF;
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #00BFFF;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clicks and Keystrokes Counter</h1>
+    <p>Clicks: <span id="clickCount">0</span></p>
+    <p>Keystrokes: <span id="keystrokeCount">0</span></p>
+    <button onclick="calculateRandomFormula()">Calculate</button>
+
+    <script>
+        let clickCount = 0;
+        let keystrokeCount = 0;
+
+        const clickCountElement = document.getElementById('clickCount');
+        const keystrokeCountElement = document.getElementById('keystrokeCount');
+
+        document.addEventListener('click', () => {
+            clickCount++;
+            updateCounts();
+        });
+
+        document.addEventListener('keydown', () => {
+            keystrokeCount++;
+            updateCounts();
+        });
+
+        function updateCounts() {
+            clickCountElement.textContent = clickCount;
+            keystrokeCountElement.textContent = keystrokeCount;
+        }
+
+        function calculateRandomFormula() {
+        }
+    </script>
+</body>
+</html>
